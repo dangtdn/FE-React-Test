@@ -5,13 +5,15 @@ import { cn } from "../../lib/utils";
 const SideBarItem = ({ icon: Icon, label, href }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const pathname = location.pathname.split("/").at(-1);
+  const pathname = location.pathname.split("/").at(-1); // Get the last part of the pathname
 
+  // Determine if the sidebar item is active
   const isActive =
     (pathname === "dashboard" && href === "/dashboard") ||
     pathname === href ||
     pathname?.startsWith(`${href}/`);
 
+  // Function to handle click and navigate to the specified href
   const onClick = () => {
     navigate(href);
   };

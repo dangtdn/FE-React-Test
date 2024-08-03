@@ -2,6 +2,7 @@ import { ArrowUpDown } from "lucide-react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 
+// Table columns configuration
 export const columns = [
   {
     accessorKey: "title",

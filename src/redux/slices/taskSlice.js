@@ -1,19 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: [],
+  value: [], // Initial task list is an empty array
 };
 
 export const taskSlice = createSlice({
   name: "task",
   initialState,
   reducers: {
-    getTaskList: (state, action) => {
+    // Reducer to update the task list
+    updateTaskList: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { getTaskList } = taskSlice.actions;
+export const { updateTaskList } = taskSlice.actions;
 
 export default taskSlice.reducer;

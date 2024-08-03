@@ -20,26 +20,29 @@ import {
 } from "../ui/table";
 
 export function DataTable({ columns, data }) {
+  // State hooks for sorting and column filters
   const [sorting, setSorting] = useState([]);
   const [columnFilters, setColumnFilters] = useState([]);
 
+  // Create table instance with various hooks for sorting, filtering, pagination, etc.
   const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    onSortingChange: setSorting,
-    getSortedRowModel: getSortedRowModel(),
-    onColumnFiltersChange: setColumnFilters,
-    getFilteredRowModel: getFilteredRowModel(),
+    data, // Table data
+    columns, // Table columns configuration
+    getCoreRowModel: getCoreRowModel(), // Basic row model
+    getPaginationRowModel: getPaginationRowModel(), // Pagination row model
+    onSortingChange: setSorting, // Callback for sorting changes
+    getSortedRowModel: getSortedRowModel(), // Sorted row model
+    onColumnFiltersChange: setColumnFilters, // Callback for column filter changes
+    getFilteredRowModel: getFilteredRowModel(), // Filtered row model
     state: {
-      sorting,
-      columnFilters,
+      sorting, // Current sorting state
+      columnFilters, // Current column filters state
     },
   });
 
   return (
     <div>
+      {/* Filter input */}
       <div className="flex items-center justify-between py-4">
         <Input
           placeholder="Filter titles..."
@@ -50,6 +53,8 @@ export function DataTable({ columns, data }) {
           className="max-w-sm"
         />
       </div>
+
+      {/* Table */}
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -61,8 +66,8 @@ export function DataTable({ columns, data }) {
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
+                            header.column.columnDef.header, // Render header
+                            header.getContext() // Header context
                           )}
                     </TableHead>
                   );
@@ -80,8 +85,8 @@ export function DataTable({ columns, data }) {
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
                       {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.column.columnDef.cell, // Render cell
+                        cell.getContext() // Cell context
                       )}
                     </TableCell>
                   ))}
@@ -93,13 +98,15 @@ export function DataTable({ columns, data }) {
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  No results. {/* Display when no rows */}
                 </TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
       </div>
+
+      {/* Pagination buttons */}
       <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           variant="outline"
