@@ -18,7 +18,7 @@ compliance-related information in a modular and user-friendly way.
 
 ### 2. Task Overview Module: (Completed)
 
-#### Description: 
+#### Description:
 
 - Display a list of compliance tasks (hardcoded initially).
 - Each task should include title, due date, assigned person, and status.
@@ -61,7 +61,7 @@ npm install @tanstack/react-table
 
 ### 5. Authentication (AWS Cognito Integration): (Completed)
 
-#### Description: 
+#### Description:
 
 - Use AWS Amplify to set up user authentication with Cognito.
 - Protect dashboard access behind a login screen.
@@ -99,11 +99,17 @@ npm install aws-amplify @aws-amplify/ui-react
 
 npm start
 ```
+
 ## Run The Projects
 
 In the project directory, you can run:
 
 ### `npm install`
+
+### `npm install -g @aws-amplify/cli`
+
+### `amplify init`
+
 ### `npm start`
 
 Runs the app in the development mode.\
