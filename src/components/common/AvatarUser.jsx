@@ -8,7 +8,7 @@ const AvatarUser = ({ email }) => {
         <AvatarImage src="https://github.com/shadcn.png" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
-      <span className="pl-3">{email}</span>
+      <span className="hidden md:inline pl-3">{email}</span>
     </button>
   );
 };

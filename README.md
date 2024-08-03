@@ -1,13 +1,56 @@
-## 2. Task Overview Module:
+## 1. Microfrontend Architecture:
 
-○ Display a list of compliance tasks (hardcoded initially).
-○ Each task should include title, due date, assigned person, and status.
-○ Optionally, allow sorting/filtering of tasks.
+Approach:
 
-## 5. Authentication (AWS Cognito Integration):
+1. Research and thoroughly understand microfrontend architecture through relevant documentation.
+2. Divide the dashboard into modules and design each module for independent development, deployment, and state management.
+3. Implement and integrate the modules using supportive tools and establish an appropriate CI/CD pipeline.
 
-○ Use AWS Amplify to set up user authentication with Cognito.
-○ Protect dashboard access behind a login screen.
+## 2. Task Overview Module: (Completed)
+
+- Display a list of compliance tasks (hardcoded initially).
+- Each task should include title, due date, assigned person, and status.
+- Optionally, allow sorting/filtering of tasks.
+
+Step 1: Display a list of compliance tasks (hardcoded initially)
+
+- Build the UI using the shadcn/ui library (https://ui.shadcn.com/docs) and TailwindCSS.
+- The hardcoded task data is stored in `src/assets/data/taskList.js` and managed by Redux to display the task list on the dashboard page.
+
+Step 2: Optionally, allow sorting/filtering of tasks.
+
+- Install the @tanstack/react-table library (https://tanstack.com/table/latest/docs/overview). This is a library used in React to efficiently and flexibly build and manage data tables.
+
+```bash
+npm install @tanstack/react-table
+
+```
+
+## 3. Compliance Status Module:
+
+Approach:
+
+- Research and utilize the Recharts library (https://recharts.org/en-US/guide) to present a visual overview of overall compliance status (e.g., pie chart or bar graph).
+- Use Axios to call the API and fetch data from the backend.
+- Data management with redux.
+- Display metrics such as the percentage of completed tasks, overdue tasks, etc.
+
+## 4. Recent Activity Module:
+
+Approach:
+
+- Research and build UI with HTML/CSS or related libraries.
+- Use Axios to call API and get data from Backend.
+- Data management with redux.
+- Display log entries with timestamp, action description and related user.
+- Use react-hook-form to handle form
+
+## 5. Authentication (AWS Cognito Integration): (Completed)
+
+- Use AWS Amplify to set up user authentication with Cognito.
+- Protect dashboard access behind a login screen.
+
+docs: https://docs.amplify.aws/gen1/javascript/start/project-setup/prerequisites/
 
 step 1: Set up emvironment
 
