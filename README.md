@@ -1,3 +1,13 @@
+# Getting Started with Create React App
+
+In the project directory, you can run:
+
+### `npm install`
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
 ## 1. Microfrontend Architecture:
 
 Approach:
@@ -7,6 +17,8 @@ Approach:
 3. Implement and integrate the modules using supportive tools and establish an appropriate CI/CD pipeline.
 
 ## 2. Task Overview Module: (Completed)
+
+Features: 
 
 - Display a list of compliance tasks (hardcoded initially).
 - Each task should include title, due date, assigned person, and status.
@@ -46,6 +58,8 @@ Approach:
 - Use react-hook-form to handle form
 
 ## 5. Authentication (AWS Cognito Integration): (Completed)
+
+Features: 
 
 - Use AWS Amplify to set up user authentication with Cognito.
 - Protect dashboard access behind a login screen.
